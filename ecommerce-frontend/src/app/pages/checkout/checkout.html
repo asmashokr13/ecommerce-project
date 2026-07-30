@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-5 text-center" style="max-width: 500px;">
+
+  <div *ngIf="!done">
+
+    <h2 class="mb-4">Checkout</h2>
+    <p>Ready to complete your order?</p>
+
+    <div class="alert alert-danger" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+
+    <button class="btn btn-success btn-lg" (click)="confirmOrder()" [disabled]="loading">
+      {{ loading ? 'Processing...' : 'Confirm Order' }}
+    </button>
+
+  </div>
+
+  <div *ngIf="done" class="alert alert-success">
+    <h4>{{ message }}</h4>
+    <a routerLink="/products" class="btn btn-primary mt-3">Continue Shopping</a>
+  </div>
+
+</div>

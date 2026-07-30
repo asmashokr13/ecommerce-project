@@ -1,0 +1,37 @@
+<div class="card h-100 shadow">
+
+    <img
+        [src]="product.image || 'https://via.placeholder.com/400x250?text=No+Image'"
+        class="card-img-top"
+        height="220"
+        alt="Product">
+
+    <div class="card-body">
+
+        <h4>{{product.name}}</h4>
+
+        <p>{{product.description}}</p>
+
+        <h5 class="text-primary">
+            ${{product.price}}
+        </h5>
+
+        <p>
+            Stock : {{product.stock}}
+        </p>
+
+    </div>
+
+    <div class="card-footer bg-white">
+
+        <button
+            class="btn btn-primary w-100"
+            (click)="addToCart()">
+
+            Add To Cart
+
+        </button>
+
+    </div>
+
+</div>
